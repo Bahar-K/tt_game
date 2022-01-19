@@ -8,6 +8,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var ilkRenk = Colors.white;
+  var ikinciRenk = Colors.redAccent;
   var username;
   var password;
   @override
@@ -15,14 +17,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: ilkRenk,
           centerTitle: true,
           title: Text(
             "Before You Start",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
           ),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: ilkRenk,
         body: Form(
           child: SafeArea(
             child: Column(
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
                     },
                     decoration: InputDecoration(
                       hintText: "Your User Name",
-                      fillColor: Colors.redAccent,
+                      fillColor: ikinciRenk,
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(13),
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(13),
                           borderSide:
-                              BorderSide(color: Colors.redAccent, width: 5)),
+                              BorderSide(color: ikinciRenk, width: 5)),
                     ),
                   ),
                 ),
@@ -68,7 +70,7 @@ class MyApp extends StatelessWidget {
                     },
                     decoration: InputDecoration(
                       hintText: "Password",
-                      fillColor: Colors.redAccent,
+                      fillColor: ikinciRenk,
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(13),
@@ -79,24 +81,28 @@ class MyApp extends StatelessWidget {
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(13),
                           borderSide:
-                              BorderSide(color: Colors.redAccent, width: 5)),
+                              BorderSide(color: ikinciRenk, width: 5)),
                     ),
                   ),
                 ),
                 Container(
                   child: Center(
-                    child: Text(
-                      'BLABALALABLABALALABLABALALABLABALALABLABALALA',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5,right: 5),
+                      child: Text(
+                        """BLABALALABLABALALABLABALALABLABALALABL
+ABALALABLABALALABLABALALABLABALALABLABALABLABALALABLABALALABLABALALABLABALALABLABAL""",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
                     ),
                   ),
                   height: 200,
-                  width: 200,
+                  width: 232,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                       Radius.circular(23),
                     ),
-                    color: Colors.redAccent,
+                    color: ikinciRenk,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.white,
@@ -113,7 +119,7 @@ class MyApp extends StatelessWidget {
                     children: <Widget>[
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.black, // background
+                          primary: ilkRenk, // background
                         ),
                         onPressed: () {
                           Navigator.pop(context);
@@ -125,7 +131,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       MaterialButton(
-                        color: Colors.black,
+                        color: ilkRenk,
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => PageA()));
