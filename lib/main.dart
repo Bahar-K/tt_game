@@ -147,22 +147,20 @@ ABALALABLABALALABLABALALABLABALALABLABALABLABALALABLABALALABLABALALABLABALALABLA
   }
 }
 
-//String isim = "Kullanıcı";
-
 class MesajBalonu extends StatelessWidget {
   var mesaj;
   @override
   MesajBalonu({required this.mesaj});
 
   Widget build(BuildContext context) {
-    String sehir = Provider.of<StateData>(context).isim;
+    String username = Provider.of<StateData>(context).isim;
     return Container(
       margin: EdgeInsets.all(8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           CircleAvatar(
-            child: Text(sehir[0]),
+            child: Text(username[0]),
           ),
           SizedBox(
             width: 13,
@@ -171,11 +169,11 @@ class MesajBalonu extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("$sehir"),
+                Text("$username"),
                 SizedBox(
                   height: 4,
                 ),
-                Text(mesaj),
+                    Text(mesaj),
               ],
             ),
           ),
@@ -256,18 +254,17 @@ class _AnaEkranState extends State<AnaEkran> {
 
     setState(() {
       MesajBalonu mesajNesnesi = MesajBalonu(mesaj: gelenMesaj);
-      // gelenMesaj ulaşmaya çalış
       mesajListesi.insert(0, mesajNesnesi);
       t1.clear();
       if (gelenMesaj.isEmpty && gelenMesaj.length < 5) {
         return showAlertDialog(
           context,
         );
-      } else if (gelenMesaj.toLowerCase().substring(0, 5) == "tuttu") {
+      } else if (gelenMesaj.toLowerCase().substring(0,5) == "tuttu") {
         //print("Tuttu");
         skor++;
-      } else {
-        //print("Tutmadı");
+      }
+      else {
         skor--;
       }
     });
